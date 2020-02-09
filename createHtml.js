@@ -39,6 +39,9 @@ function createHtml(data){
         <script src="https://kit.fontawesome.com/31d816cc8e.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>GitHub</title>
+        <style>
+           /*  styles for stuff I am missing hearder and go by classes to fill outt the rest  */
+        </style>
     </head>
     <body>
         <div class="wrapper">
@@ -46,10 +49,10 @@ function createHtml(data){
             <img src="#">
             <h1>HI!</h1>
             <h2>My Name is ${data.name} </h2>
-            <h4> Currently @ ${data.info}</h4>
+            <h4> Currently @ ${data.company}</h4>
             <nav class="navBar"> 
                 <a href=${data.location} Target="_blank"></a>
-                <a href=${data.github} Target="_blank"></a>
+                <a href=${data.html_url} Target="_blank"></a>
                 <a href=${data.blog} Target="_blank"></a>
             
             </nav>
@@ -63,22 +66,22 @@ function createHtml(data){
                     <div class="row">
                         <div class="col">
                             <h3>Public respo</h3>
-                            <h5>${data.count}</h5>
+                            <h5>${data.public_repos}</h5>
                         </div>
                         <div class="col">
-                            <h3>Follower</h3>
-                            <h5>${data.count.folow}</h5>
+                            <h3>Followers</h3>
+                            <h5>${data.followers}</h5>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col">
                             <h3>GitHub Stars</h3>
-                            <h5>${data.count}</h5>
+                            <h5>${data.starred_url}</h5>
                         </div>
                         <div class="col">
                             <h3>Following</h3>
-                            <h5>${data.count.following}</h5>
+                            <h5>${data.following}</h5>
                         </div>
                 </div>
                 </div>
@@ -93,3 +96,6 @@ function createHtml(data){
     </html>
     `
 }
+
+module.exports = createHtml;
+
